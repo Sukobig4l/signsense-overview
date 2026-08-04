@@ -11,7 +11,7 @@
 
 ## System Demo
 
-*(Embed your animated GIF or YouTube video link here showing the system translating a sign in real-time with the TTS announcing the word)*
+(
 
 ![SignSense Demo Placeholder](
 
