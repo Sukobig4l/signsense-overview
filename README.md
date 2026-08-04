@@ -1,4 +1,4 @@
-# SignSense: Real-Time Sign Language Recognition 🤟
+# SignSense: Real-Time Sign Language Recognition 
 
 > An accessible, browser-based American Sign Language (ASL) recognition system powered by Deep Learning and Computer Vision.
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎥 System Demo
+## System Demo
 
 *(Embed your animated GIF or YouTube video link here showing the system translating a sign in real-time with the TTS announcing the word)*
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 📖 Overview
+##  Overview
 
 **SignSense** is an undergraduate final-year project designed to bridge the communication gap between the Deaf and Hard-of-Hearing (DHH) community and the hearing majority. 
 
@@ -30,7 +30,7 @@ The system is trained on a 50-word vocabulary and achieves **92.7% accuracy** on
 
 ---
 
-## 🚀 How It Works (For Non-Technical Users)
+##  How It Works (For Non-Technical Users)
 
 SignSense works entirely in your browser without needing to upload your video to the cloud. Here is the step-by-step process:
 
@@ -41,7 +41,7 @@ SignSense works entirely in your browser without needing to upload your video to
 
 ---
 
-## 🧠 System Architecture
+##  System Architecture
 
 The project decouples heavy computer vision tracking from the neural network inference to maintain real-time performance on standard laptops.
 
@@ -49,18 +49,18 @@ The project decouples heavy computer vision tracking from the neural network inf
 flowchart TD
     subgraph Client [Web Browser]
         Cam[Webcam Feed] --> MP[MediaPipe Holistic WASM]
-        MP -->|Extracts 75 (x,y,z) Landmarks| JS[JavaScript Buffer]
+        MP -->|Extracts 75 xyz Landmarks| JS[JavaScript Buffer]
         JS -->|150-frame sequence via HTTP POST| API
     end
 
     subgraph Server [Flask Python Backend]
-        API[/predict endpoint] --> Norm[Coordinate Normalisation]
+        API[Predict Endpoint] --> Norm[Coordinate Normalisation]
         Norm --> BiGRU[BiGRU Neural Network]
         BiGRU --> Softmax[Softmax 50-Class Output]
         Softmax --> FSM[Finite State Machine]
     end
     
-    FSM -->|Top-3 Predictions & Confidence > 85%| Client
+    FSM -->|Top-3 Predictions and High Confidence| Client
     
     subgraph UI [User Interface]
         Client --> Display[Visual Text Display]
@@ -70,7 +70,7 @@ flowchart TD
 
 ---
 
-## 📊 Performance & Results
+##  Performance & Results
 
 The deep learning model was trained using a highly refined subset of the **ASL Citizen** dataset. The model evaluates sequences of 150 frames, with each frame containing a 225-dimensional coordinate vector.
 
@@ -85,14 +85,14 @@ The deep learning model was trained using a highly refined subset of the **ASL C
 > *Note: The system achieves a 95% reduction in memory overhead by processing structural keypoints rather than raw 720p video arrays, making it highly efficient for edge-device deployment.*
 
 
-## 📚 Vocabulary
+##  Vocabulary
 
 The system currently recognises the following 50 words:
 > *AXE, BASKETBALL, BEE, BELIEVE, BELT, BITE, BREAKFAST, CALENDAR, CANCEL, CANCER, CHRISTMAS, CLOUD, CONFUSED, DARK, DEAF, DECIDE, DEMAND, DINNER, DOG, DOWNSIZE, DRAG, EAT, EDIT, ELEVATOR, FINE, FOREIGNER, GUESS, HALLOWEEN, HOSPITAL, LETTUCE, LOCK, LUNCH, MECHANIC, MICROSCOPE, MOVIE, NIGHT, NOON, PARTY, PATIENT, RECENT, RESEARCH, RIVER, ROCKINGCHAIR, SHAVE, SPECIAL, TAKEOFF, THIRD, TWINS, TYPE, WHATFOR*
 
 ---
 
-## ⚖️ License & Academic Use
+##  License & Academic Use
 
 This project is licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license. 
 
