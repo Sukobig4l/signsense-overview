@@ -11,15 +11,12 @@
 
 ## System Demo
 
-(
 
-![SignSense Demo Placeholder](
 
 https://github.com/user-attachments/assets/a356d625-5d74-406d-87d2-e238f462f77d
 
 
 
-)
 
 ---
 
