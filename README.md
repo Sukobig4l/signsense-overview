@@ -13,7 +13,13 @@
 
 *(Embed your animated GIF or YouTube video link here showing the system translating a sign in real-time with the TTS announcing the word)*
 
-![SignSense Demo Placeholder](https://via.placeholder.com/800x400.png?text=SignSense+Real-Time+Demo+Video/GIF)
+![SignSense Demo Placeholder](
+
+https://github.com/user-attachments/assets/a356d625-5d74-406d-87d2-e238f462f77d
+
+
+
+)
 
 ---
 
